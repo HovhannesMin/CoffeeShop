@@ -1,11 +1,13 @@
-import React from "react";
+import React from 'react';
+import {View, StyleSheet} from 'react-native';
+import SearchMenu from '../SearchMenu/searchmenu';
 
 function MainPage() {
-	return(
-		<>
-		<Text>this is main page</Text>
-		</>
-	);
+  return (
+    <View>
+      <SearchMenu />
+    </View>
+  );
 }
 
 export default MainPage;
