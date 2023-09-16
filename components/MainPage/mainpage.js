@@ -1,6 +1,7 @@
 import React from 'react';
-import {View, StyleSheet, Text, FlatList, TouchableOpacity} from 'react-native';
+import {View, StyleSheet, Text, FlatList, TouchableOpacity, SafeAreaView} from 'react-native';
 import SearchMenu from '../SearchMenu/searchmenu';
+import CoffeeList from '../CoffeeList/coffeelist';
 
 function MainPage() {
   const data = [
@@ -19,15 +20,18 @@ function MainPage() {
         margin: 35,
         alignItems: 'center',
         justifyContent: 'center',
-				borderRadius: 68
+        borderRadius: 68,
       }}>
-      <Text style={{color: '#FFF5E9', fontSize: 12, fontWeight: '400'}}>{item.text}</Text>
+      <Text style={{color: '#FFF5E9', fontSize: 12, fontWeight: '400'}}>
+        {item.text}
+      </Text>
     </TouchableOpacity>
   );
 
   return (
-    <View>
-      <SearchMenu />
+    <SafeAreaView>
+			<View>
+				<SearchMenu />
       <View style={mainstyles.wouldlike}>
         <Text style={mainstyles.wouldliketext}>
           What would you like to drink today?
@@ -38,8 +42,11 @@ function MainPage() {
           renderItem={renderItem}
           keyExtractor={item => item.key}
         />
+			</View>
+      
+        <CoffeeList />
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
