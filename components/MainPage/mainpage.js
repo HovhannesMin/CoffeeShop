@@ -1,7 +1,15 @@
 import React from 'react';
-import {View, StyleSheet, Text, FlatList, TouchableOpacity, SafeAreaView} from 'react-native';
+import {
+  View,
+  StyleSheet,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  SafeAreaView,
+} from 'react-native';
 import SearchMenu from '../SearchMenu/searchmenu';
 import CoffeeList from '../CoffeeList/coffeelist';
+
 
 function MainPage() {
   const data = [
@@ -29,24 +37,26 @@ function MainPage() {
   );
 
   return (
-    <SafeAreaView>
-			<View>
-				<SearchMenu />
-      <View style={mainstyles.wouldlike}>
-        <Text style={mainstyles.wouldliketext}>
-          What would you like to drink today?
-        </Text>
-        <FlatList
-          data={data}
-          horizontal={true}
-          renderItem={renderItem}
-          keyExtractor={item => item.key}
-        />
-			</View>
-      
-        <CoffeeList />
-      </View>
-    </SafeAreaView>
+      <SafeAreaView>
+        <View>
+          <SearchMenu />
+          <View style={mainstyles.wouldlike}>
+            <Text style={mainstyles.wouldliketext}>
+              What would you like to drink today?
+            </Text>
+            <FlatList
+              data={data}
+              horizontal={true}
+              renderItem={renderItem}
+              keyExtractor={item => item.key}
+            />
+          </View>
+          <View style={mainstyles.list}>
+            <CoffeeList />
+          </View>
+        </View>
+      </SafeAreaView>
+
   );
 }
 
@@ -62,6 +72,9 @@ const mainstyles = StyleSheet.create({
     fontWeight: '600',
     width: 180,
     color: '#230C02',
+  },
+  list: {
+    backgroundColor: '#230C02',
   },
 });
 

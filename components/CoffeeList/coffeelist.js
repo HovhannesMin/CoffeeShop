@@ -1,41 +1,80 @@
-import React from "react";
-import {View, StyleSheet, Text, FlatList, TouchableOpacity, SafeAreaView} from 'react-native';
+import React from 'react';
+import {
+  View,
+  StyleSheet,
+  Text,
+  FlatList,
+  TouchableOpacity,
+  SafeAreaView,
+	Image
+} from 'react-native';
 
-function CoffeeList(){
-	const coffedata = [
-    {key: '1', sort: 'Decaff', name: 'SILKY CAFEAU LAIT'},
-    {key: '2', sort: 'Black coffee', name: 'ICED AMERICANO'},
-    {key: '3', sort: 'Winter Special', name: 'CAPPUCINO LATTE'},
-    {key: '4', sort: 'Decaff', name: 'SILKY CAFEAU LAIT '},
-		{key: '5', sort: 'Popular', name: 'ICED AMERICANO'},
-    {key: '6', sort: 'Black coffee', name: 'ICED AMERICANO'},
-    {key: '7', sort: 'Winter Special', name: 'ICED AMERICANO'},
+function CoffeeList() {
+  const coffedata = [
+    {key: '1', sort: 'DECAFF', name: 'SILKY CAFEAU LAIT', image: require('../../images/Sliky.png')},
+    {key: '2', sort: 'Black coffee', name: 'ICED AMERICANO', image: require('../../images/americano.png')},
+    {key: '3', sort: 'Winter Special', name: 'CAPPUCINO LATTE', image: require('../../images/cappucino.png')},
+    {key: '4', sort: 'CHOCOLATE', name: 'ICED CHOCOLATE ', image: require('../../images/chocolate.png')},
+    {key: '5', sort: 'Black coffee', name: 'ICED AMERICANO', image: require('../../images/americano.png')},
+    {key: '6', sort: 'Black coffee', name: 'ICED AMERICANO', image: require('../../images/americano.png')},
+    {key: '7', sort: 'Black coffee', name: 'ICED AMERICANO',image: require('../../images/americano.png')},
   ];
 
   const renderCoffes = ({item}) => (
     <TouchableOpacity
       style={{
         height: 110,
-        backgroundColor: '#230C02',
+        backgroundColor: '#FFF5E9',
         margin: 35,
-				borderRadius: 10,
-				
+        borderRadius: 10,
       }}>
-      <Text style={{color: '#FFF5E9', fontSize: 12, fontWeight: '400',marginLeft: 10, marginTop: 10}}>{item.sort}</Text>
+      <View style={liststyles.divcoffee}>
+				<View>
+				  <Text style={liststyles.coffeestypes}>{item.sort} </Text>
+          <Text style={liststyles.coffeesnames}>{item.name}</Text>
+				</View>
+				<Image
+        source={item.image}
+				style={liststyles.coffeeimages}
+      />
+      </View>
     </TouchableOpacity>
   );
 
-
-
-   return(
-    <SafeAreaView>
-        <FlatList
-          data={coffedata}
-          renderItem={renderCoffes}
-          keyExtractor={item => item.key}
-        />
-      </SafeAreaView>
-	 );
+  return (
+      <FlatList
+        data={coffedata}
+        renderItem={renderCoffes}
+        keyExtractor={item => item.key}
+      />
+  );
 }
+
+const liststyles = StyleSheet.create({
+  coffeestypes: {
+    color: '#230C02',
+    fontSize: 10,
+    fontWeight: '600',
+    marginLeft: 10,
+    marginTop: 15,
+  },
+  coffeesnames: {
+    color: '#230C02',
+    fontSize: 16,
+    fontWeight: '500',
+    marginLeft: 10,
+    marginTop: 15,
+		width: 150
+  },
+	divcoffee: {
+		display: 'flex',
+		flexDirection: 'row',
+		justifyContent: 'space-between'
+	},
+	coffeeimages: { 
+		marginRight: 10,
+		marginTop: 8
+	}
+});
 
 export default CoffeeList;

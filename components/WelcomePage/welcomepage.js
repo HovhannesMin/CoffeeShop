@@ -7,7 +7,7 @@ function WelcomePage() {
 	const navigation = useNavigation();
 
   const handleShopNowPress = () => {
-    navigation.navigate('MainPage');
+    navigation.navigate('AllPages');
   };
 
   return (
