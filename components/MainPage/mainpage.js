@@ -13,7 +13,7 @@ import CoffeeList from '../CoffeeList/coffeelist';
 
 function MainPage() {
   const data = [
-    {key: '1', text: 'Popular'},
+    {key: '1', text: 'All'},
     {key: '2', text: 'Black coffee'},
     {key: '3', text: 'Winter Special'},
     {key: '4', text: 'Decaff'},
