@@ -10,7 +10,6 @@ import {
 import SearchMenu from '../SearchMenu/searchmenu';
 import CoffeeList from '../CoffeeList/coffeelist';
 
-
 function MainPage() {
   const data = [
     {key: '1', text: 'All'},
@@ -37,13 +36,15 @@ function MainPage() {
   );
 
   return (
-      <SafeAreaView>
-        <View>
-          <SearchMenu />
-          <View style={mainstyles.wouldlike}>
-            <Text style={mainstyles.wouldliketext}>
-              What would you like to drink today?
-            </Text>
+    <SafeAreaView>
+  
+        <SearchMenu />
+        <View style={mainstyles.wouldlike}>
+          <Text style={mainstyles.wouldliketext}>
+            What would you like to drink today?
+          </Text>
+
+          <View>
             <FlatList
               data={data}
               horizontal={true}
@@ -51,12 +52,11 @@ function MainPage() {
               keyExtractor={item => item.key}
             />
           </View>
-          <View style={mainstyles.list}>
-            <CoffeeList />
-          </View>
         </View>
-      </SafeAreaView>
-
+        <View style={mainstyles.list}>
+          <CoffeeList />
+        </View>
+    </SafeAreaView>
   );
 }
 
