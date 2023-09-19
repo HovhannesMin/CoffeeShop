@@ -54,7 +54,7 @@ function MainPage() {
           </View>
         </View>
         <View style={mainstyles.list}>
-          <CoffeeList />
+          <CoffeeList style={mainstyles.flatlist}/>
         </View>
     </SafeAreaView>
   );
