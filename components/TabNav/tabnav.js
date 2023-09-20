@@ -1,7 +1,6 @@
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import MainPage from '../MainPage/mainpage';
 import Shopping from '../Shopping/shopping';
-import {View} from 'react-native';
 import HomeIcon from '../../svgs/homeicon';
 import ShoppingIcon from '../../svgs/shoppingicon';
 import LikedPage from '../LikedPage/likedpage';
