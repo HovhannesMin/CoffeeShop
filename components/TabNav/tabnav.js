@@ -20,29 +20,35 @@ function Navig() {
         name="MainPage"
         component={MainPage}
         options={{
-          headerShown: false,
-          tabBarIcon: ({focused}) => <HomeIcon fill={focused ? '#230C02' : 'none'}/>,
+          headerShown: false, // Hide the header for MainPage
+          tabBarIcon: ({ focused }) => (
+            <HomeIcon fill={focused ? '#230C02' : 'none'} />
+          ),
         }}
       />
       <Tab.Screen
         name="Shopping"
         component={Shopping}
         options={{
-          headerShown: false,
-          tabBarIcon: ({focused}) => <ShoppingIcon fill={focused ? '#230C02' : 'none'}/>,
+          headerShown: false, // Hide the header for Shopping
+          tabBarIcon: ({ focused }) => (
+            <ShoppingIcon fill={focused ? '#230C02' : 'none'} />
+          ),
         }}
       />
-			<Tab.Screen
+      <Tab.Screen
         name="LikedPage"
         component={LikedPage}
         options={{
-          headerShown: false,
-          tabBarIcon: ({focused}) => <LikedIcon fill={focused ? '#230C02' : 'none'}/>,
+          headerShown: false, // Hide the header for LikedPage
+          tabBarIcon: ({ focused }) => (
+            <LikedIcon fill={focused ? '#230C02' : 'none'} />
+          ),
         }}
       />
-			
     </Tab.Navigator>
   );
 }
+
 
 export default Navig;
